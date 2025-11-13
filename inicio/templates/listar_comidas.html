@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listado de Comidas</title>
+</head>
+<body>
+    <h1>Comidas en el restaurante:</h1>
+    
+    <ul>
+        {% for comida in listado_comidas %}
+            <li>
+                <strong>Menú:</strong> {{ comida.menu }} | 
+                <strong>Pedidos:</strong> {{ comida.pedidos }} | 
+                <strong>Cocina:</strong> {{ comida.cocina }} | 
+                <strong>Reservas:</strong> {{ comida.reservas }}
+            </li>
+        {% empty %}
+            <li>No hay comidas registradas</li>
+        {% endfor %}
+    </ul>
+    
+    <a href="{% url 'elaborar_comida' %}">Agregar nueva comida</a>
+</body>
+</html>

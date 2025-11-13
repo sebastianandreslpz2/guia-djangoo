@@ -1,0 +1,9 @@
+<h1>Listado de comidas</h1>
+<a href="{% url 'producto_create' %}">Agregar nueva comida</a>
+<ul>
+  {% for comida in comidas %}
+    <li>{{ comida.nombre }} - ${{ comida.precio }}</li>
+  {% empty %}
+    <li>No hay comidas cargadas.</li>
+  {% endfor %}
+</ul>

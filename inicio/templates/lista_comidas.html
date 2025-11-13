@@ -1,0 +1,7 @@
+<ul>
+  {% for c in listado_de_comidas %}
+    <li>Comida ({{ forloop.counter }}): {{ c.nombre }} - {{ c.categoria }} - ${{ c.precio }}</li>
+  {% empty %}
+    <li>No hay comidas cargadas.</li>
+  {% endfor %}
+</ul>
